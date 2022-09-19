@@ -140,7 +140,7 @@ def get_weight_done(message):
                 carbohydrates_done = abs(round(carbohydrates - (carbohydrates * percent_weight), 1))
                 fats_done = abs(round(fats - (fats * percent_weight), 1))
             bot.send_message(message.chat.id, f'На 100 гр. готового продукта - {calories_done} калорий, \
-         {proteins_done} белка, {fats_done} жиров, {carbohydrates_done} углеводов')
+ {proteins_done} белка, {fats_done} жиров, {carbohydrates_done} углеводов')
             bot.send_message(message.chat.id, 'Введи сколько продукта хотите сьесть')
             bot.register_next_step_handler(message, get_weight_eat)
             break
@@ -160,7 +160,7 @@ def get_weight_eat(message):
             carbohydrates_eat = round((carbohydrates_done / 100) * weight_eat, 1)
             fats_eat = round((fats_done / 100) * weight_eat, 1)
             bot.send_message(message.chat.id, f'На {weight_eat} гр. готового продукта - {calories_eat} калорий, \
-        {proteins_eat} белка, {fats_eat} жиров, {carbohydrates_eat} углеводов')
+ {proteins_eat} белка, {fats_eat} жиров, {carbohydrates_eat} углеводов')
             break
         else:
             bot.send_message(message.chat.id, 'Введи сколько продукта хотите сьесть')
